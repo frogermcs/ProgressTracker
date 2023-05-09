@@ -8,7 +8,7 @@ export class RequestHelper {
      * Logs the request details.
      * @param {functions.https.Request} request The request to handle.
      */
-    logRequestDetails(request: functions.https.Request) {
+    static logRequestDetails(request: functions.https.Request) {
         console.log("Request headers: " + JSON.stringify(request.headers));
         console.log("Request body: " + JSON.stringify(request.body));
     }
@@ -18,7 +18,7 @@ export class RequestHelper {
      * @param {functions.https.Request} request The request to handle.
      * @return {boolean} True if the request is a POST request, false otherwise.
      */
-    isPostMethod(request: functions.https.Request) {
+    static isPostMethod(request: functions.https.Request) {
         return request.method === "POST";
     }
 
@@ -28,7 +28,7 @@ export class RequestHelper {
      * @param {number} status
      * @param {unknown} errors
      */
-    respondWithError(response: functions.Response,
+    static respondWithError(response: functions.Response,
         status: number,
         errors: unknown) {
         response

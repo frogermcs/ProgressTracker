@@ -3,6 +3,10 @@ import { IsNotEmpty, Min, validateOrReject } from "class-validator";
 import { RequestHelper } from "./request-helper";
 import { BigQuery } from "@google-cloud/bigquery";
 
+export class RequestsHelper {
+    
+}
+
 export class Progress {
   @IsNotEmpty() project: string;
   @IsNotEmpty() progress: number;
@@ -22,18 +26,17 @@ export class Progress {
 
 export const reportProgress = functions.https.onRequest(
     async (request, response) => {
-        const requestHelper: RequestHelper = new RequestHelper();
-        requestHelper.logRequestDetails(request);
-        if (requestHelper.isPostMethod(request)) {
+        RequestHelper.logRequestDetails(request);
+        if (RequestHelper.isPostMethod(request)) {
             try {
                 const progress = await parseAndValidateRequest(request);
                 await saveProgressToDatabase(progress);
                 response.status(200).send(request.body);
             } catch (error) {
-                requestHelper.respondWithError(response, 400, error);
+                RequestHelper.respondWithError(response, 400, error);
             }
         } else {
-            requestHelper.respondWithError(response, 403, "Forbidden!");
+            RequestHelper.respondWithError(response, 403, "Forbidden!");
         }
     });
 
