@@ -3,10 +3,6 @@ import { IsNotEmpty, Min, validateOrReject } from "class-validator";
 import { RequestHelper } from "./request-helper";
 import { BigQuery } from "@google-cloud/bigquery";
 
-export class RequestsHelper {
-    
-}
-
 export class Progress {
   @IsNotEmpty() project: string;
   @IsNotEmpty() progress: number;
