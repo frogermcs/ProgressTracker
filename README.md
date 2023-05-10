@@ -9,4 +9,6 @@ This project intends to build a simple solution within less than a day, which is
 
 ## Practical Engineering Management
 
-The full context behind this project was described in the article [Track your goals with Cloud Function, BigQuery, and Looker Studio](https://www.practicalengineering.management/track-your-goals-with-cloud-function-bigquery-and-looker-studio/). It's part of the series: [Practical solutions to track your goals](https://www.practicalengineering.management/practical-solutions-to-track-your-goals/).
+The full context behind this project was described in the article [Track your goals with Cloud Function, BigQuery, and Looker Studio](https://www.practicalengineering.management/track-your-goals-with-cloud-function-bigquery-and-looker-studio/). 
+
+It's part of the series: [Practical solutions to track your goals](https://www.practicalengineering.management/practical-solutions-to-track-your-goals/).
